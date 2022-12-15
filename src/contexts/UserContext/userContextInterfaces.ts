@@ -7,7 +7,7 @@ export interface iUserContext {
 }
 
 export interface iLoginFormData {
-  name: string;
+  email: string;
   password: string;
 }
 
@@ -16,4 +16,15 @@ export interface iRegisterFormData {
   email: string;
   password: string;
   confirmPassword: string;
+}
+
+interface iUser {
+  email: string;
+  name: string;
+  id: number;
+}
+
+export interface iLoginRequest {
+  accessToken: string;
+  user: iUser;
 }

@@ -6,13 +6,15 @@ interface iInputProps extends InputHTMLAttributes<HTMLInputElement> {
   type: string;
   placeholder: string;
   register: UseFormRegisterReturn;
+  error: string | undefined;
 }
 
-const Input = ({ name, type, placeholder, register }: iInputProps) => {
+const Input = ({ name, type, placeholder, register, error }: iInputProps) => {
   return (
     <fieldset>
       <legend>{name}</legend>
       <input type={type} placeholder={placeholder} {...register} />
+      {error && <p>{error}</p>}
     </fieldset>
   );
 };

@@ -1,5 +1,4 @@
-import { useState } from "react";
-import LoginPage from "./pages/LoginPage";
+import RoutesMain from "./routes";
 import GlobalStyles from "./styles/global";
 
 function App() {
@@ -8,7 +7,7 @@ function App() {
     <div className="App">
       <GlobalStyles />
 
-      <LoginPage />
+      <RoutesMain/>
         
     </div>
   );
