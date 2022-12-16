@@ -1,4 +1,4 @@
-export interface iUserContextProps {
+export interface iContextChildrenProp {
   children: React.ReactNode;
 }
 

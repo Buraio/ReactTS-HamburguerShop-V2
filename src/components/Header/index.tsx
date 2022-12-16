@@ -1,9 +1,10 @@
+import logoIcon from "../../assets/logo.svg";
 import HeaderCard from "../HeaderCard";
 
 const Header = () => {
   return (
     <header>
-      <img src="" alt="" />
+      <img src={logoIcon} alt="" />
       <HeaderCard />
     </header>
   );

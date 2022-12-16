@@ -7,26 +7,24 @@ import {
   iLoginRequest,
   iRegisterFormData,
   iUserContext,
-  iUserContextProps,
+  iContextChildrenProp,
 } from "./userContextInterfaces";
 
 export const UserContext = createContext({} as iUserContext);
 
-const UserProvider = ({ children }: iUserContextProps) => {
-
+const UserProvider = ({ children }: iContextChildrenProp) => {
   const navigate = useNavigate();
 
   const registerData: SubmitHandler<iRegisterFormData> = (data) => {
-
     console.log(data);
 
     const userRegisterWithApi = async () => {
       try {
         const request = await burguerKenzieApi.post("/users", data);
 
-        console.log(request);
+        console.log(request.data);
         setTimeout(() => {
-          navigate("/")
+          navigate("/");
         }, 5000);
       } catch (error) {
         console.log(error);
@@ -37,7 +35,6 @@ const UserProvider = ({ children }: iUserContextProps) => {
   };
 
   const loginData: SubmitHandler<iLoginFormData> = (data) => {
-
     console.log(data);
 
     const userLoginWithApi = async () => {
@@ -49,6 +46,7 @@ const UserProvider = ({ children }: iUserContextProps) => {
 
         console.log(request.data);
 
+        localStorage.setItem("@token", request.data.accessToken);
       } catch (error) {
         console.error(error);
       }
