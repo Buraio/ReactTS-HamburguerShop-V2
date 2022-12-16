@@ -42,7 +42,7 @@ const LoginForm = () => {
         register={register("password")}
         error={errors.password?.message}
       />
-      <button>Entrar</button>
+      <button type="submit">Entrar</button>
       <p>Crie sua conta para saborear muitas delícias e matar sua fome!</p>
       <Link to="/register">Cadastrar</Link>
     </form>

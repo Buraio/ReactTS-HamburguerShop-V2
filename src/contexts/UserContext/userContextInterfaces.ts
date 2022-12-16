@@ -4,6 +4,7 @@ export interface iUserContextProps {
 
 export interface iUserContext {
   loginData: (data: iLoginFormData) => void;
+  registerData: (data: iRegisterFormData) => void;
 }
 
 export interface iLoginFormData {
