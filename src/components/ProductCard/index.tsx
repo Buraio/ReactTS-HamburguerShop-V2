@@ -1,4 +1,5 @@
 import React from "react";
+import CardButton from "../CardButton";
 import StyledProductCardLi from "./style";
 
 export interface iProductCardProps {
@@ -7,7 +8,6 @@ export interface iProductCardProps {
   name: string;
   category: string;
   price: number;
-  children: React.ReactNode;
 }
 
 const ProductCard = ({
@@ -16,7 +16,6 @@ const ProductCard = ({
   name,
   category,
   price,
-  children,
 }: iProductCardProps) => {
   return (
     <StyledProductCardLi id={id}>
@@ -26,7 +25,7 @@ const ProductCard = ({
         <small>{category}</small>
         <span>R$ {price}</span>
       </div>
-      {children}
+      <CardButton id={id}/>
     </StyledProductCardLi>
   );
 };

@@ -5,8 +5,8 @@ import { burguerKenzieApi } from "../../services/api";
 import ProductCard, { iProductCardProps } from "../ProductCard";
 
 const ProductList = () => {
-
-  const { productArray, setProductArray, filteredProducts } = useContext(ProductContext);
+  const { productArray, setProductArray, filteredProducts } =
+    useContext(ProductContext);
 
   useEffect(() => {
     const token = localStorage.getItem("@token");
@@ -34,24 +34,30 @@ const ProductList = () => {
     }
   }, []);
 
+  const renderProducts = (array: iProductCardProps[]) => {
+    return array.map((product, index) => {
+      const { id, name, category, price, img }: iProductCardProps = product;
+
+      return (
+        <ProductCard
+          key={index}
+          id={id}
+          name={name}
+          category={category}
+          price={price}
+          img={img}
+        >
+          <button></button>
+        </ProductCard>
+      );
+    });
+  };
+
   return (
     <ul>
-      {productArray.map((product, index) => {
-        const { id, name, category, price, img }: iProductCardProps = product;
-
-        return (
-          <ProductCard
-            key={index}
-            id={id}
-            name={name}
-            category={category}
-            price={price}
-            img={img}
-          >
-            <button></button>
-          </ProductCard>
-        );
-      })}
+      {filteredProducts.length !== 0
+        ? renderProducts(filteredProducts)
+        : renderProducts(productArray)}
     </ul>
   );
 };
