@@ -58,6 +58,10 @@ const GlobalStyles = createGlobalStyle`
     font-family: var(--font-family);
   }
 
+  /* legend {
+    display: none;
+  } */
+
   body, .App {
     height: 100vh;
   }
