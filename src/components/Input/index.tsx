@@ -1,5 +1,6 @@
 import { InputHTMLAttributes, useContext } from "react";
 import { UseFormRegisterReturn } from "react-hook-form/dist/types";
+import StyledInput from "./style";
 
 interface iInputProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
@@ -13,7 +14,7 @@ const Input = ({ name, type, placeholder, register, error }: iInputProps) => {
   return (
     <fieldset>
       <legend>{name}</legend>
-      <input type={type} placeholder={placeholder} {...register} />
+      <StyledInput type={type} placeholder={placeholder} {...register} />
       {error && <p>{error}</p>}
     </fieldset>
   );

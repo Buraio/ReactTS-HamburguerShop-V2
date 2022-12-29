@@ -62,7 +62,7 @@ const GlobalStyles = createGlobalStyle`
     display: none;
   } */
 
-  body, .App {
+  body {
     height: 100vh;
   }
 
