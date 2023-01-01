@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const StyledHeader = styled.header`
 
-  max-width: 400px;
+  width: 100%;
   margin-top: 40px;
   display: flex;
   flex-direction: column;
