@@ -6,6 +6,7 @@ import { iRegisterFormData } from "../../contexts/UserContext/userContextInterfa
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { UserContext } from "../../contexts/UserContext/UserContext";
+import StyledForm from "../Form/style";
 
 const RegisterForm = () => {
   const { registerData } = useContext(UserContext);
@@ -40,7 +41,7 @@ const RegisterForm = () => {
   });
 
   return (
-    <form onSubmit={handleSubmit(registerData)} noValidate>
+    <StyledForm onSubmit={handleSubmit(registerData)} noValidate>
       <div>
         <h2>Cadastro</h2>
         <Link to="/">Retornar para o login</Link>
@@ -76,7 +77,7 @@ const RegisterForm = () => {
       />
 
       <button type="submit">Cadastrar</button>
-    </form>
+    </StyledForm>
   );
 };
 

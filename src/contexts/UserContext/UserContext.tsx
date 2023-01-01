@@ -44,9 +44,8 @@ const UserProvider = ({ children }: iContextChildrenProp) => {
           data
         );
 
-        console.log(request.data);
-
         localStorage.setItem("@token", request.data.accessToken);
+        navigate("/dashboard");
       } catch (error) {
         console.error(error);
       }
