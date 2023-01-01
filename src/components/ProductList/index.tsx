@@ -46,9 +46,7 @@ const ProductList = () => {
           category={category}
           price={price}
           img={img}
-        >
-          <button></button>
-        </ProductCard>
+        ></ProductCard>
       );
     });
   };
