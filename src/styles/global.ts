@@ -54,7 +54,7 @@ const GlobalStyles = createGlobalStyle`
     list-style: none;
   }
 
-  h1, h2, h3, h4, h5, h6, p, a, span, li, button, input, label, select, option, fieldset, legend {
+  h1, h2, h3, h4, h5, h6, p, a, span, li, button, input, label, select, option, fieldset, legend, small {
     font-family: var(--font-family);
   }
 
