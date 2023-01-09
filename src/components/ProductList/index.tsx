@@ -3,6 +3,7 @@ import { ProductContext } from "../../contexts/ProductContext/ProductContext";
 import { iProductContext } from "../../contexts/ProductContext/productContextInterfaces";
 import { burguerKenzieApi } from "../../services/api";
 import ProductCard, { iProductCardProps } from "../ProductCard";
+import StyledList from "./style";
 
 const ProductList = () => {
   const { productArray, setProductArray, filteredProducts } =
@@ -52,11 +53,11 @@ const ProductList = () => {
   };
 
   return (
-    <ul>
+    <StyledList>
       {filteredProducts.length !== 0
         ? renderProducts(filteredProducts)
         : renderProducts(productArray)}
-    </ul>
+    </StyledList>
   );
 };
 
