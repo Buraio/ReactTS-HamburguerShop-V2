@@ -5,6 +5,7 @@ import SearchBar from "../SearchBar";
 import { useNavigate } from "react-router";
 import { useContext } from "react";
 import { CartContext } from "../../contexts/CartContext/CartContext";
+import StyledDashHeader from "./style";
 
 const DashboardHeader = () => {
   const navigate = useNavigate();
@@ -16,24 +17,23 @@ const DashboardHeader = () => {
   };
 
   return (
-    <header>
-      <img src={logoIcon} alt="" />
-
-      <div>
+    <StyledDashHeader>
+      <div className="headerContainer">
+        <img src={logoIcon} alt="" />
         <div>
           <SearchBar />
-        </div>
 
-        <div>
-          <button onClick={() => setCartModal(true)}>
-            <img src={cartIcon} alt="" />
-          </button>
-          <button onClick={exitToLogin}>
-            <img src={exitIcon} alt="" />
-          </button>
+          <div className="iconDiv">
+            <button onClick={() => setCartModal(true)}>
+              <img src={cartIcon} alt="" />
+            </button>
+            <button onClick={exitToLogin}>
+              <img src={exitIcon} alt="" />
+            </button>
+          </div>
         </div>
       </div>
-    </header>
+    </StyledDashHeader>
   );
 };
 
