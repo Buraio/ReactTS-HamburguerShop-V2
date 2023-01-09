@@ -5,6 +5,8 @@ export interface iContextChildrenProp {
 export interface iUserContext {
   loginData: (data: iLoginFormData) => void;
   registerData: (data: iRegisterFormData) => void;
+  dashboardLoading: boolean;
+  user: null | iUser;
 }
 
 export interface iLoginFormData {
@@ -19,7 +21,7 @@ export interface iRegisterFormData {
   confirmPassword: string;
 }
 
-interface iUser {
+export interface iUser {
   email: string;
   name: string;
   id: number;
