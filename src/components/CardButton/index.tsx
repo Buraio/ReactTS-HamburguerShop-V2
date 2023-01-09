@@ -31,7 +31,7 @@ const CardButton = ({ id }: iCardbuttonProps) => {
   // }, [cartProductArray])
 
   return (
-    <StyledCardButton id={id} onClick={addProductToCart}>
+    <StyledCardButton id={id} onClick={() => addProductToCart}>
       Adicionar
     </StyledCardButton>
   );

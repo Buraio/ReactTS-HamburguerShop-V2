@@ -36,16 +36,16 @@ const UserProvider = ({ children }: iContextChildrenProp) => {
   }, []);
 
   const registerData: SubmitHandler<iRegisterFormData> = (data) => {
-    console.log(data);
-
     const userRegisterWithApi = async () => {
       try {
+
         await burguerKenzieApi.post("/users", data);
+        
         setTimeout(() => {
           navigate("/");
         }, 5000);
       } catch (error) {
-        console.log(error);
+        console.error(error);
       }
     };
 
@@ -53,16 +53,12 @@ const UserProvider = ({ children }: iContextChildrenProp) => {
   };
 
   const loginData: SubmitHandler<iLoginFormData> = (data) => {
-    console.log(data);
-
     const userLoginWithApi = async () => {
       try {
         const request = await burguerKenzieApi.post<iLoginRequest>(
           "/login",
           data
         );
-
-        console.log(request.data);
 
         localStorage.setItem("@token", request.data.accessToken);
 

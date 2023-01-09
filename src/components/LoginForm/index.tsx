@@ -6,6 +6,7 @@ import Input from "../Input";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Link } from "react-router-dom";
+import StyledForm from "../Form/style";
 
 const LoginForm = () => {
   const { loginData } = useContext(UserContext);
@@ -26,7 +27,7 @@ const LoginForm = () => {
   });
 
   return (
-    <form onSubmit={handleSubmit(loginData)} noValidate>
+    <StyledForm onSubmit={handleSubmit(loginData)} noValidate>
       <h2>Login</h2>
       <Input
         name="Email"
@@ -45,7 +46,7 @@ const LoginForm = () => {
       <button type="submit">Entrar</button>
       <p>Crie sua conta para saborear muitas delícias e matar sua fome!</p>
       <Link to="/register">Cadastrar</Link>
-    </form>
+    </StyledForm>
   );
 };
 
