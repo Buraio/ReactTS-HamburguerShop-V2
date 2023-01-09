@@ -9,6 +9,36 @@ const StyledContainer = styled.div`
   flex-direction: column-reverse;
   gap: 15px;
 
+  @media (min-width: 450px) {
+    & {
+      width: 80%;
+    }
+  }
+
+  @media (min-width: 650px) {
+    & {
+      width: 70%;
+    }
+  }
+
+  @media (min-width: 800px) {
+    & {
+      width: 60%;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    & {
+      width: 80%;
+      max-width: 1000px;
+      height: 100vh;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
+    }
+  }
+
 `;
 
 export default StyledContainer;
