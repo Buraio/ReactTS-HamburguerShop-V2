@@ -44,7 +44,9 @@ const LoginForm = () => {
         error={errors.password?.message}
       />
       <button type="submit">Entrar</button>
-      <p>Crie sua conta para saborear muitas delícias e matar sua fome!</p>
+      <p className="bottom">
+        Crie sua conta para saborear muitas delícias e matar sua fome!
+      </p>
       <Link to="/register">Cadastrar</Link>
     </StyledForm>
   );

@@ -8,7 +8,7 @@ const TotalCart = () => {
     <StyledTotalCart>
       <div>
         <span>Total</span>
-        <small>R$ </small>
+        <small>R$ 0.00</small>
       </div>
       <button className="" onClick={removeAllFromCart}>
         Remover todos
