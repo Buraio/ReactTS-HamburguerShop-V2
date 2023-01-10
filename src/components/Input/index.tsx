@@ -14,13 +14,8 @@ const Input = ({ name, type, placeholder, register, error }: iInputProps) => {
   return (
     <fieldset>
       <legend>{name}</legend>
-<<<<<<< Updated upstream
-      <input type={type} placeholder={placeholder} {...register} />
-      {error && <p>{error}</p>}
-=======
       <StyledInput type={type} placeholder={placeholder} {...register} />
       {error && <p className="validation">{error}</p>}
->>>>>>> Stashed changes
     </fieldset>
   );
 };
