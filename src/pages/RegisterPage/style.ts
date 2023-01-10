@@ -2,7 +2,6 @@ import styled from "styled-components";
 import StyledContainer from "../../styles/container";
 
 const RegisterContainer = styled(StyledContainer)`
-
   flex-direction: column;
 
   @media (min-width: 1000px) {
@@ -13,10 +12,9 @@ const RegisterContainer = styled(StyledContainer)`
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      gap: 50px;
+      gap: 140px;
     }
   }
-
 `;
 
 export default RegisterContainer;

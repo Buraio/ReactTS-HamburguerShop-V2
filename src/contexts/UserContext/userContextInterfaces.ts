@@ -31,3 +31,11 @@ export interface iLoginRequest {
   accessToken: string;
   user: iUser;
 }
+
+export interface iResponse {
+  response: iErrorMessage;
+}
+
+export interface iErrorMessage {
+  data: string;
+}

@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const StyledDashHeader = styled.header`
-
   width: 100%;
   height: 80px;
   margin-bottom: 25px;
@@ -9,6 +8,7 @@ const StyledDashHeader = styled.header`
 
   & > div.headerContainer {
     width: 90%;
+    max-width: 1260px;
     height: 100%;
     margin: 0 auto;
     display: flex;
@@ -25,7 +25,6 @@ const StyledDashHeader = styled.header`
   }
 
   & div.iconDiv {
-
     display: flex;
     gap: 20px;
 
@@ -34,6 +33,23 @@ const StyledDashHeader = styled.header`
     }
   }
 
+  @media (min-width: 620px) {
+    & > div.headerContainer {
+      max-width: 620px;
+    }
+  }
+
+  @media (min-width: 940px) {
+    & > div.headerContainer {
+      max-width: 940px;
+    }
+  }
+
+  @media (min-width: 1260px) {
+    & > div.headerContainer {
+      max-width: 1260px;
+    }
+  }
 `;
 
 export default StyledDashHeader;

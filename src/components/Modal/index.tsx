@@ -5,7 +5,7 @@ import ModalBackground from "./modalBackground";
 import StyledModal from "./style";
 
 const CartModal = () => {
-  const { setCartModal } = useContext(CartContext);
+  const { cartProductArray, setCartModal } = useContext(CartContext);
 
   return (
     <ModalBackground>
@@ -19,7 +19,17 @@ const CartModal = () => {
           <span>Adicione itens</span>
         </div>
 
-        <ul></ul>
+        <ul>
+
+          {cartProductArray.map((product) => {
+            return (
+              <>
+                <p>{product.price}</p>
+              </>
+            );
+          })}
+
+        </ul>
 
         <TotalCart />
       </StyledModal>

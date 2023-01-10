@@ -35,7 +35,7 @@ const StyledContainer = styled.div`
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      gap: 50px;
+      gap: 100px;
     }
   }
 

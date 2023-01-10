@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const StyledForm = styled.form`
   width: 100%;
-  padding: 18px;
+  padding: 20px;
   border: 1px solid var(--gray-100);
   box-shadow: 0px 0px 30px -20px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
@@ -28,7 +28,7 @@ const StyledForm = styled.form`
 
   & fieldset {
     height: 50px;
-    margin: 10px 0;
+    margin: 20px 0;
     border-radius: 8px;
     border: 2px solid var(--gray-600);
   }
@@ -70,12 +70,20 @@ const StyledForm = styled.form`
 
   & p {
     max-width: 75%;
-    margin: 10px auto;
+    margin: 5px 0;
     font-weight: 400;
     font-size: 12px;
     text-align: center;
     color: var(--gray-300);
     display: flex;
+  }
+
+  & p.validation {
+    color: var(--negative);
+  }
+
+  & p.bottom {
+    margin: 15px auto;
   }
 `;
 
