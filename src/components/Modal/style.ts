@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 const StyledModal = styled.div`
   width: 100%;
-  margin: 0 15px;
+  max-width: 500px;
+  margin: 70px 15px;
   background-color: var(--gray-0);
   border-radius: 5px;
   
