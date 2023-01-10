@@ -1,8 +1,9 @@
-import { useContext, useEffect } from "react";
+import { MouseEvent, useContext, useEffect } from "react";
+import { toast } from "react-toastify";
 import { CartContext } from "../../contexts/CartContext/CartContext";
 import { ProductContext } from "../../contexts/ProductContext/ProductContext";
 import StyledCardButton from "./style";
-
+import "react-toastify/dist/ReactToastify.css";
 interface iCardbuttonProps {
   id: string;
 }
@@ -11,8 +12,9 @@ const CardButton = ({ id }: iCardbuttonProps) => {
   const { productArray } = useContext(ProductContext);
   const { cartProductArray, setCartProduct } = useContext(CartContext);
 
-  const addProductToCart = (event: { target: HTMLInputElement }) => {
-    const productCardId = event.target.id;
+  const addProductToCart = (event: MouseEvent) => {
+    const target = event.target as HTMLButtonElement;
+    const productCardId = target.id;
     console.log(productArray);
 
     productArray.map((product) => {
@@ -24,6 +26,8 @@ const CardButton = ({ id }: iCardbuttonProps) => {
         console.log(cartProductArray);
       }
     });
+
+    toast.success("Item adicionado ao carrinho");
   };
 
   // useEffect(() => {
@@ -31,7 +35,12 @@ const CardButton = ({ id }: iCardbuttonProps) => {
   // }, [cartProductArray])
 
   return (
-    <StyledCardButton id={id} onClick={() => addProductToCart}>
+    <StyledCardButton
+      id={id}
+      onClick={(event) => {
+        addProductToCart(event);
+      }}
+    >
       Adicionar
     </StyledCardButton>
   );

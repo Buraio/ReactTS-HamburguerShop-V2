@@ -1,6 +1,9 @@
+import { AxiosError } from "axios";
 import { createContext, useEffect, useState } from "react";
 import { SubmitHandler } from "react-hook-form/dist/types";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { burguerKenzieApi } from "../../services/api";
 import {
   iLoginFormData,
@@ -9,6 +12,7 @@ import {
   iUserContext,
   iContextChildrenProp,
   iUser,
+  iResponse,
 } from "./userContextInterfaces";
 
 export const UserContext = createContext({} as iUserContext);
@@ -32,20 +36,22 @@ const UserProvider = ({ children }: iContextChildrenProp) => {
 
     setDashboardLoading(false);
     navigate("/dashboard");
-
   }, []);
 
   const registerData: SubmitHandler<iRegisterFormData> = (data) => {
     const userRegisterWithApi = async () => {
       try {
-
         await burguerKenzieApi.post("/users", data);
-        
+
+        toast.success(`Conta criada! redirecionando...`);
+
         setTimeout(() => {
           navigate("/");
-        }, 5000);
+        }, 3000);
       } catch (error) {
         console.error(error);
+        const currentError = error as AxiosError<iResponse>;
+        toast.error(`${currentError.response?.data}`);
       }
     };
 
@@ -65,9 +71,12 @@ const UserProvider = ({ children }: iContextChildrenProp) => {
         localStorage.setItem("@user", JSON.stringify(request.data.user));
         setUser(request.data.user);
 
+        toast.success(`Seja bem vindo, ${request.data.user.name}`);
+
         navigate("/dashboard");
       } catch (error) {
         console.error(error);
+        toast.error(`Email ou senha incorreta`);
       }
     };
 
